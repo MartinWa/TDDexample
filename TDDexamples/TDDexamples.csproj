@@ -44,8 +44,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NumberDatabase\NumberDatabaseExternalCode.csproj">
-      <Project>{98ACE42F-7250-4CAE-9EE7-B32CD1ABC657}</Project>
+    <ProjectReference Include="..\NumberDatabaseExternalCode\NumberDatabaseExternalCode.csproj">
+      <Project>{FB32E3F2-C2E6-41CA-B8C4-636B1F795527}</Project>
       <Name>NumberDatabaseExternalCode</Name>
     </ProjectReference>
   </ItemGroup>
