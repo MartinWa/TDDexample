@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 
 namespace TDDexamples
 {
@@ -19,6 +21,16 @@ namespace TDDexamples
         public int CountStored()
         {
             return _storage.Count;
+        }
+
+        public string GetCommaSeparatedString()
+        {
+            var result = new List<string>();
+            foreach (var i in _storage)
+            {
+                result.Add(i.ToString(CultureInfo.InvariantCulture));
+            }
+            return string.Join(",", result);
         }
     }
 }
