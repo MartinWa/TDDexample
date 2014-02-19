@@ -11,7 +11,7 @@ namespace TDDexamplesTests
         public void B0001_DrawAndStore()
         {
             // Arrange
-            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int> { 1 }));
+            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int> { 1 }), new NumberDatabaseStub());
 
             // Act
             classUnderTest.DrawAndStore();
@@ -21,7 +21,7 @@ namespace TDDexamplesTests
         public void B0002_GetCommaSeparatedDraws()
         {
             // Arrange
-            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int> { 1,2,3 }));
+            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int> { 1, 2, 3 }), new NumberDatabaseStub());
 
             // Act
             classUnderTest.DrawAndStore();
@@ -37,7 +37,7 @@ namespace TDDexamplesTests
         public void B0003_CountNumbersDrawn()
         {
             // Arrange
-            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int> { 1, 2, 3 }));
+            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int> { 1, 2, 3 }), new NumberDatabaseStub());
 
             // Act
             classUnderTest.DrawAndStore();
@@ -53,13 +53,13 @@ namespace TDDexamplesTests
         public void B0004_CheckNumberAtIndex()
         {
             // Arrange
-            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int>{ 1,2,3 }));
+            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int> { 1, 2, 3 }), new NumberDatabaseStub());
 
             // Act
             classUnderTest.DrawAndStore();
             classUnderTest.DrawAndStore();
             classUnderTest.DrawAndStore();
-            var result = classUnderTest.GetNumberAtIndex(2); // How to test this? (Rethorical question 1.)
+            var result = classUnderTest.GetNumberAtIndex(2);
 
             // Assert
             Assert.AreEqual(2, result);
@@ -69,14 +69,14 @@ namespace TDDexamplesTests
         public void B0005_CheckIfNumberisDrawn()
         {
             // Arrange
-            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int> { 1, 2, 3 }));
+            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int> { 1, 2, 3 }), new NumberDatabaseStub());
 
             // Act
             classUnderTest.DrawAndStore();
             classUnderTest.DrawAndStore();
             classUnderTest.DrawAndStore();
-            var resultTrue = classUnderTest.IsDrawn(1); 
-            var resultFalse = classUnderTest.IsDrawn(4); 
+            var resultTrue = classUnderTest.IsDrawn(1);
+            var resultFalse = classUnderTest.IsDrawn(4);
 
             // Assert
             Assert.IsTrue(resultTrue);
@@ -87,13 +87,13 @@ namespace TDDexamplesTests
         public void B0006_StoreToDatabase()
         {
             // Arrange
-            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int> { 1, 2, 3 }));
+            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int> { 1, 2, 3 }), new NumberDatabaseStub());
 
             // Act
             classUnderTest.DrawAndStore();
             classUnderTest.DrawAndStore();
             classUnderTest.DrawAndStore();
-            classUnderTest.StoreToDatabase(); // How to test this? (Rethorical question 3.)
+            classUnderTest.StoreToDatabase();
         }
     }
 }

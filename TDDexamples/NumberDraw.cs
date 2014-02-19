@@ -5,14 +5,14 @@ namespace TDDexamples
     public class NumberDraw
     {
         private readonly IRandomzer _randomzer;
+        private readonly INumberDatabase _database;
         private readonly IntegerStorage _numberStorage;
-        private readonly NumberDatabase _database;
 
-        public NumberDraw(IRandomzer randomzer)
+        public NumberDraw(IRandomzer randomzer, INumberDatabase numberDatabase)
         {
             _randomzer = randomzer;
             _numberStorage = new IntegerStorage();
-            _database = new NumberDatabase();
+            _database = numberDatabase;
         }
 
         public int CountNumbersDrawn()
