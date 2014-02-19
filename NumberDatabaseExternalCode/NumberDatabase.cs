@@ -2,7 +2,7 @@
 
 namespace NumberDatabaseExternalCode
 {
-    public class NumberDatabase
+    public class NumberDatabase : INumberDatabase
     {
         private string _storage;
 
