@@ -1,15 +1,16 @@
-﻿using System;
-using NumberDatabaseExternalCode;
+﻿using NumberDatabaseExternalCode;
 
 namespace TDDexamples
 {
     public class NumberDraw
     {
+        private readonly IRandomzer _randomzer;
         private readonly IntegerStorage _numberStorage;
         private readonly NumberDatabase _database;
 
-        public NumberDraw()
+        public NumberDraw(IRandomzer randomzer)
         {
+            _randomzer = randomzer;
             _numberStorage = new IntegerStorage();
             _database = new NumberDatabase();
         }
@@ -21,8 +22,7 @@ namespace TDDexamples
 
         public void DrawAndStore()
         {
-            var rnd = new Random();
-            _numberStorage.Add(rnd.Next(1, 20));
+            _numberStorage.Add(_randomzer.Next(1, 20));
         }
 
         public string GetCommaSeparatedDraws()
