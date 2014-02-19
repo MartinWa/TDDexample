@@ -13,13 +13,13 @@ namespace NumberDatabaseExternalCode
 
         public void Store(string stringToStore)
         {
-            Thread.Sleep(2000);
+            Thread.Sleep(10000);
             _storage = stringToStore;
         }
 
         public string Retreive()
         {
-            Thread.Sleep(6000);
+            Thread.Sleep(10000);
             return _storage;
         }
     }
