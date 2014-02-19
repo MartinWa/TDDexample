@@ -47,5 +47,10 @@ namespace TDDexamples
         {
             return _storage[index];
         }
+
+        public void ClearStorage()
+        {
+            _storage.Clear();
+        }
     }
 }
