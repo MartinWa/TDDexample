@@ -32,5 +32,10 @@ namespace TDDexamples
             }
             return string.Join(",", result);
         }
+
+        public int SumAllNumbers()
+        {
+            return _storage.Sum();
+        }
     }
 }

@@ -46,5 +46,21 @@ namespace TDDexamplesTests
             // Assert
             Assert.AreEqual("10,4,9", result);
         }
+
+        [TestMethod]
+        public void SumOfAllStoredNumbers()
+        {
+            // Arrange
+            var classUnderTest = new IntegerStorage();
+            classUnderTest.Add(10);
+            classUnderTest.Add(4);
+            classUnderTest.Add(9);
+
+            // Act
+            var result = classUnderTest.SumAllNumbers();
+
+            // Assert
+            Assert.AreEqual(23, result);
+        }
     }
 }
