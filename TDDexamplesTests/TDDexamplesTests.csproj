@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="IntegerStorageTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NumberDrawTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TDDexamples\TDDexamples.csproj">
