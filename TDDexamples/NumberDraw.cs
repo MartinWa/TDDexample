@@ -31,5 +31,10 @@ namespace TDDexamples
         {
             return _numberStorage.NumberAtIndex(i);
         }
+
+        public bool IsDrawn(int i)
+        {
+            return _numberStorage.IsStored(i);
+        }
     }
 }

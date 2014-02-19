@@ -61,5 +61,18 @@ namespace TDDexamplesTests
             classUnderTest.DrawAndStore();
             var result = classUnderTest.GetNumberAtIndex(2); // How to test this? (Rethorical question .)
         }
+
+        [TestMethod]
+        public void B0005_CheckIfNumberisDrawn()
+        {
+            // Arrange
+            var classUnderTest = new NumberDraw();
+
+            // Act
+            classUnderTest.DrawAndStore();
+            classUnderTest.DrawAndStore();
+            classUnderTest.DrawAndStore();
+            var result = classUnderTest.IsDrawn(5); // How to test this? (Rethorical question .)
+        }
     }
 }
