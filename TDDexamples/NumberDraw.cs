@@ -21,5 +21,10 @@ namespace TDDexamples
         {
             return _numberStorage.GetCommaSeparatedString();
         }
+
+        public int GetNumberAtIndex(int i)
+        {
+            return _numberStorage.NumberAtIndex(i);
+        }
     }
 }

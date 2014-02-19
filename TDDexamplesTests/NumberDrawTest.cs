@@ -32,5 +32,18 @@ namespace TDDexamplesTests
             // Assert
             Assert.IsTrue(Regex.IsMatch(result, "\\d+,\\d+,\\d+", RegexOptions.IgnoreCase));
         }
+
+        [TestMethod]
+        public void B0003_CheckNumberAtIndex()
+        {
+            // Arrange
+            var classUnderTest = new NumberDraw();
+
+            // Act
+            classUnderTest.DrawAndStore();
+            classUnderTest.DrawAndStore();
+            classUnderTest.DrawAndStore();
+            var result = classUnderTest.GetNumberAtIndex(2); // How to test this? (Rethorical question .)
+        }
     }
 }
