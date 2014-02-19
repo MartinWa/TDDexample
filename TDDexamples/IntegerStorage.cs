@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace TDDexamples
 {
-    public class IntegerStorage
+    public class IntegerStorage : IIntegerStorage
     {
         private readonly List<int> _storage;
 

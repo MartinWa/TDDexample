@@ -11,7 +11,7 @@ namespace TDDexamplesTests
         public void B0001_DrawAndStore()
         {
             // Arrange
-            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int> { 1 }), new NumberDatabaseStub());
+            var classUnderTest = new NumberDraw(new IntegerStoreageStub(), new RandomizerStub(new List<int> { 1 }), new NumberDatabaseStub());
 
             // Act
             classUnderTest.DrawAndStore();

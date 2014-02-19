@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IIntegerStorage.cs" />
     <Compile Include="IntegerStorage.cs" />
     <Compile Include="IRandomzer.cs" />
     <Compile Include="NumberDraw.cs" />
