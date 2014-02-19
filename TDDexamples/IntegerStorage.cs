@@ -37,5 +37,10 @@ namespace TDDexamples
         {
             return _storage.Sum();
         }
+
+        public bool IsStored(int checkedNumber)
+        {
+            return _storage.Contains(checkedNumber);
+        }
     }
 }

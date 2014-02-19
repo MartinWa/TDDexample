@@ -62,5 +62,21 @@ namespace TDDexamplesTests
             // Assert
             Assert.AreEqual(23, result);
         }
+
+        [TestMethod]
+        public void CheckIfNumberIsStored()
+        {
+            // Arrange
+            var classUnderTest = new IntegerStorage();
+            classUnderTest.Add(10);
+
+            // Act
+            var resultPass = classUnderTest.IsStored(10);
+            var resultFail = classUnderTest.IsStored(2);
+
+            // Assert
+            Assert.IsTrue(resultPass);
+            Assert.IsFalse(resultFail);
+        }
     }
 }
