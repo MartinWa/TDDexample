@@ -25,11 +25,17 @@ namespace TDDexamplesTests
         [TestMethod]
         public void B0001_DrawAndStore()
         {
+            // Arrange
+            const int start = 1;
+            const int stop = 20;
+            const int expected = 5;
+
             // Act
+            _randomizerMock.Setup(rm => rm.Next(start, stop)).Returns(expected);
             _classUnderTest.DrawAndStore();
 
             // Assert
-            _integerStorageMock.Verify(ism => ism.Add(It.IsAny<int>()));
+            _integerStorageMock.Verify(ism => ism.Add(expected));
 
         }
 
