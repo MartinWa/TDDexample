@@ -45,7 +45,7 @@ namespace TDDexamples
 
         public int NumberAtIndex(int index)
         {
-            return _storage[index];
+            return _storage[index-1];
         }
 
         public void ClearStorage()

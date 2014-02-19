@@ -89,7 +89,7 @@ namespace TDDexamplesTests
             classUnderTest.Add(9);
 
             // Act
-            var result = classUnderTest.NumberAtIndex(1);
+            var result = classUnderTest.NumberAtIndex(2);
 
             // Assert
             Assert.AreEqual(4, result);

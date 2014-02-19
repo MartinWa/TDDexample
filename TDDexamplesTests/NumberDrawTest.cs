@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TDDexamples;
 
@@ -38,7 +37,7 @@ namespace TDDexamplesTests
         public void B0003_CountNumbersDrawn()
         {
             // Arrange
-            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int>()));
+            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int> { 1, 2, 3 }));
 
             // Act
             classUnderTest.DrawAndStore();
@@ -54,33 +53,41 @@ namespace TDDexamplesTests
         public void B0004_CheckNumberAtIndex()
         {
             // Arrange
-            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int>()));
+            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int>{ 1,2,3 }));
 
             // Act
             classUnderTest.DrawAndStore();
             classUnderTest.DrawAndStore();
             classUnderTest.DrawAndStore();
             var result = classUnderTest.GetNumberAtIndex(2); // How to test this? (Rethorical question 1.)
+
+            // Assert
+            Assert.AreEqual(2, result);
         }
 
         [TestMethod]
         public void B0005_CheckIfNumberisDrawn()
         {
             // Arrange
-            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int>()));
+            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int> { 1, 2, 3 }));
 
             // Act
             classUnderTest.DrawAndStore();
             classUnderTest.DrawAndStore();
             classUnderTest.DrawAndStore();
-            var result = classUnderTest.IsDrawn(5); // How to test this? (Rethorical question 2.)
+            var resultTrue = classUnderTest.IsDrawn(1); 
+            var resultFalse = classUnderTest.IsDrawn(4); 
+
+            // Assert
+            Assert.IsTrue(resultTrue);
+            Assert.IsFalse(resultFalse);
         }
 
         [TestMethod]
         public void B0006_StoreToDatabase()
         {
             // Arrange
-            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int>()));
+            var classUnderTest = new NumberDraw(new RandomizerStub(new List<int> { 1, 2, 3 }));
 
             // Act
             classUnderTest.DrawAndStore();
