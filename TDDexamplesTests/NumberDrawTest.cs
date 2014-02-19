@@ -59,7 +59,7 @@ namespace TDDexamplesTests
             classUnderTest.DrawAndStore();
             classUnderTest.DrawAndStore();
             classUnderTest.DrawAndStore();
-            var result = classUnderTest.GetNumberAtIndex(2); // How to test this? (Rethorical question .)
+            var result = classUnderTest.GetNumberAtIndex(2); // How to test this? (Rethorical question 1.)
         }
 
         [TestMethod]
@@ -72,7 +72,20 @@ namespace TDDexamplesTests
             classUnderTest.DrawAndStore();
             classUnderTest.DrawAndStore();
             classUnderTest.DrawAndStore();
-            var result = classUnderTest.IsDrawn(5); // How to test this? (Rethorical question .)
+            var result = classUnderTest.IsDrawn(5); // How to test this? (Rethorical question 2.)
+        }
+
+        [TestMethod]
+        public void B0006_StoreToDatabase()
+        {
+            // Arrange
+            var classUnderTest = new NumberDraw();
+
+            // Act
+            classUnderTest.DrawAndStore();
+            classUnderTest.DrawAndStore();
+            classUnderTest.DrawAndStore();
+            classUnderTest.StoreToDatabase(); // How to test this? (Rethorical question 3.)
         }
     }
 }

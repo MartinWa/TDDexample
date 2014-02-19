@@ -1,14 +1,17 @@
 ﻿using System;
+using NumberDatabaseExternalCode;
 
 namespace TDDexamples
 {
     public class NumberDraw
     {
         private readonly IntegerStorage _numberStorage;
+        private readonly NumberDatabase _database;
 
         public NumberDraw()
         {
             _numberStorage = new IntegerStorage();
+            _database = new NumberDatabase();
         }
 
         public int CountNumbersDrawn()
@@ -19,7 +22,7 @@ namespace TDDexamples
         public void DrawAndStore()
         {
             var rnd = new Random();
-            _numberStorage.Add(rnd.Next(1,20));
+            _numberStorage.Add(rnd.Next(1, 20));
         }
 
         public string GetCommaSeparatedDraws()
@@ -35,6 +38,11 @@ namespace TDDexamples
         public bool IsDrawn(int i)
         {
             return _numberStorage.IsStored(i);
+        }
+
+        public void StoreToDatabase()
+        {
+            _database.Store(_numberStorage.GetCommaSeparatedString());
         }
     }
 }

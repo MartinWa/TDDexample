@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3FEC87BA-7650-44D1-A51D-EB99CFF1E1B9}</ProjectGuid>
+    <ProjectGuid>{98ACE42F-7250-4CAE-9EE7-B32CD1ABC657}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TDDexamples</RootNamespace>
-    <AssemblyName>TDDexamples</AssemblyName>
+    <RootNamespace>NumberDatabaseExternalCode</RootNamespace>
+    <AssemblyName>NumberDatabaseExternalCode</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,15 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IntegerStorage.cs" />
-    <Compile Include="NumberDraw.cs" />
+    <Compile Include="NumberDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NumberDatabase\NumberDatabaseExternalCode.csproj">
-      <Project>{98ACE42F-7250-4CAE-9EE7-B32CD1ABC657}</Project>
-      <Name>NumberDatabaseExternalCode</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
