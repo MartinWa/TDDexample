@@ -7,7 +7,7 @@ namespace TDDexamplesTests
     public class IntegerStorageTest
     {
         [TestMethod]
-        public void AddInteger()
+        public void A0001_AddInteger()
         {
             // Arrange
             var classUnderTest = new IntegerStorage();
@@ -17,7 +17,7 @@ namespace TDDexamplesTests
         }
 
         [TestMethod]
-        public void CountStoredNumbers()
+        public void A0002_CountStoredNumbers()
         {
             // Arrange
             var classUnderTest = new IntegerStorage();
@@ -32,7 +32,7 @@ namespace TDDexamplesTests
         }
 
         [TestMethod]
-        public void CommaSeparatedListOfAllStoredNumbers()
+        public void A0003_CommaSeparatedListOfAllStoredNumbers()
         {
             // Arrange
             var classUnderTest = new IntegerStorage();
@@ -48,7 +48,7 @@ namespace TDDexamplesTests
         }
 
         [TestMethod]
-        public void SumOfAllStoredNumbers()
+        public void A0004_SumOfAllStoredNumbers()
         {
             // Arrange
             var classUnderTest = new IntegerStorage();
@@ -64,7 +64,7 @@ namespace TDDexamplesTests
         }
 
         [TestMethod]
-        public void CheckIfNumberIsStored()
+        public void A0005_CheckIfNumberIsStored()
         {
             // Arrange
             var classUnderTest = new IntegerStorage();
@@ -80,7 +80,7 @@ namespace TDDexamplesTests
         }
 
         [TestMethod]
-        public void GetNumberAtIndex()
+        public void A0006_GetNumberAtIndex()
         {
             // Arrange
             var classUnderTest = new IntegerStorage();
@@ -96,7 +96,7 @@ namespace TDDexamplesTests
         }
 
         [TestMethod]
-        public void ClearStorage()
+        public void A0007_ClearStorage()
         {
             // Arrange
             var classUnderTest = new IntegerStorage();
