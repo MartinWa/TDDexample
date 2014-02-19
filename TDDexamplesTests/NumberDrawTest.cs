@@ -8,20 +8,28 @@ namespace TDDexamplesTests
     [TestClass]
     public class NumberDrawTest
     {
+        private Mock<IRandomzer> _randomizerMock;
+        private Mock<INumberDatabase> _numberDatabaseMock;
+        private Mock<IIntegerStorage> _integerStorageMock;
+        private NumberDraw _classUnderTest;
+
+        [TestInitialize]
+        public void Initialize()
+        {
+            _randomizerMock = new Mock<IRandomzer>();
+            _numberDatabaseMock = new Mock<INumberDatabase>();
+            _integerStorageMock = new Mock<IIntegerStorage>();
+            _classUnderTest = new NumberDraw(_integerStorageMock.Object, _randomizerMock.Object, _numberDatabaseMock.Object);
+        }
+
         [TestMethod]
         public void B0001_DrawAndStore()
         {
-            // Arrange
-            var randomizerMock = new Mock<IRandomzer>();
-            var numberDatabaseMock = new Mock<INumberDatabase>();
-            var integerStorageMock = new Mock<IIntegerStorage>();
-            var classUnderTest = new NumberDraw(integerStorageMock.Object, randomizerMock.Object, numberDatabaseMock.Object);
-
             // Act
-            classUnderTest.DrawAndStore();
+            _classUnderTest.DrawAndStore();
 
             // Assert
-            integerStorageMock.Verify(ism => ism.Add(It.IsAny<int>()));
+            _integerStorageMock.Verify(ism => ism.Add(It.IsAny<int>()));
 
         }
 
@@ -29,15 +37,11 @@ namespace TDDexamplesTests
         public void B0002_GetCommaSeparatedDraws()
         {
             // Arrange
-            var randomizerMock = new Mock<IRandomzer>();
-            var numberDatabaseMock = new Mock<INumberDatabase>();
-            var integerStorageMock = new Mock<IIntegerStorage>();
             const string testValue = "ssttrriinngg";
-            var classUnderTest = new NumberDraw(integerStorageMock.Object, randomizerMock.Object, numberDatabaseMock.Object);
 
             // Act
-            integerStorageMock.Setup(ism => ism.GetCommaSeparatedString()).Returns(testValue);
-            var result = classUnderTest.GetCommaSeparatedDraws();
+            _integerStorageMock.Setup(ism => ism.GetCommaSeparatedString()).Returns(testValue);
+            var result = _classUnderTest.GetCommaSeparatedDraws();
 
             // Assert
             Assert.AreEqual(testValue, result);
@@ -47,15 +51,11 @@ namespace TDDexamplesTests
         public void B0003_CountNumbersDrawn()
         {
             // Arrange
-            var randomizerMock = new Mock<IRandomzer>();
-            var numberDatabaseMock = new Mock<INumberDatabase>();
-            var integerStorageMock = new Mock<IIntegerStorage>();
             const int testValue = 11;
-            var classUnderTest = new NumberDraw(integerStorageMock.Object, randomizerMock.Object, numberDatabaseMock.Object);
 
             // Act
-            integerStorageMock.Setup(ism => ism.CountStored()).Returns(testValue);
-            var result = classUnderTest.CountNumbersDrawn();
+            _integerStorageMock.Setup(ism => ism.CountStored()).Returns(testValue);
+            var result = _classUnderTest.CountNumbersDrawn();
 
             // Assert
             Assert.AreEqual(testValue, result);
@@ -65,16 +65,12 @@ namespace TDDexamplesTests
         public void B0004_CheckNumberAtIndex()
         {
             // Arrange
-            var randomizerMock = new Mock<IRandomzer>();
-            var numberDatabaseMock = new Mock<INumberDatabase>();
             const int indexToLookAt = 2;
             const int expectedValue = 13;
-            var integerStorageMock = new Mock<IIntegerStorage>();
-            var classUnderTest = new NumberDraw(integerStorageMock.Object, randomizerMock.Object, numberDatabaseMock.Object);
 
             // Act
-            integerStorageMock.Setup(ism => ism.NumberAtIndex(indexToLookAt)).Returns(expectedValue);
-            var result = classUnderTest.GetNumberAtIndex(indexToLookAt);
+            _integerStorageMock.Setup(ism => ism.NumberAtIndex(indexToLookAt)).Returns(expectedValue);
+            var result = _classUnderTest.GetNumberAtIndex(indexToLookAt);
 
             // Assert
             Assert.AreEqual(expectedValue, result);
@@ -84,18 +80,14 @@ namespace TDDexamplesTests
         public void B0005_CheckIfNumberisDrawn()
         {
             // Arrange
-            var randomizerMock = new Mock<IRandomzer>();
-            var numberDatabaseMock = new Mock<INumberDatabase>();
-            var integerStorageMock = new Mock<IIntegerStorage>();
             const int existingNumber = 1;
             const int notExistingNumber = 1;
-            var classUnderTest = new NumberDraw(integerStorageMock.Object, randomizerMock.Object, numberDatabaseMock.Object);
 
             // Act
-            integerStorageMock.Setup(ism => ism.IsStored(existingNumber)).Returns(true);
-            var resultTrue = classUnderTest.IsDrawn(existingNumber);
-            integerStorageMock.Setup(ism => ism.IsStored(notExistingNumber)).Returns(false);
-            var resultFalse = classUnderTest.IsDrawn(notExistingNumber);
+            _integerStorageMock.Setup(ism => ism.IsStored(existingNumber)).Returns(true);
+            var resultTrue = _classUnderTest.IsDrawn(existingNumber);
+            _integerStorageMock.Setup(ism => ism.IsStored(notExistingNumber)).Returns(false);
+            var resultFalse = _classUnderTest.IsDrawn(notExistingNumber);
 
             // Assert
             Assert.IsTrue(resultTrue);
@@ -106,18 +98,14 @@ namespace TDDexamplesTests
         public void B0006_StoreToDatabase()
         {
             // Arrange
-            var randomizerMock = new Mock<IRandomzer>();
-            var numberDatabaseMock = new Mock<INumberDatabase>();
-            var integerStorageMock = new Mock<IIntegerStorage>();
             const string testValue = "ssttrriinngg";
-            var classUnderTest = new NumberDraw(integerStorageMock.Object, randomizerMock.Object, numberDatabaseMock.Object);
 
             // Act
-            integerStorageMock.Setup(ism => ism.GetCommaSeparatedString()).Returns(testValue);
-            classUnderTest.StoreToDatabase();
+            _integerStorageMock.Setup(ism => ism.GetCommaSeparatedString()).Returns(testValue);
+            _classUnderTest.StoreToDatabase();
 
             // Assert
-            numberDatabaseMock.Verify(db => db.Store(testValue));
+            _numberDatabaseMock.Verify(db => db.Store(testValue));
         }
     }
 }
