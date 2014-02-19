@@ -78,5 +78,21 @@ namespace TDDexamplesTests
             Assert.IsTrue(resultPass);
             Assert.IsFalse(resultFail);
         }
+
+        [TestMethod]
+        public void GetNumberAtIndex()
+        {
+            // Arrange
+            var classUnderTest = new IntegerStorage();
+            classUnderTest.Add(10);
+            classUnderTest.Add(4);
+            classUnderTest.Add(9);
+
+            // Act
+            var result = classUnderTest.NumberAtIndex(1);
+
+            // Assert
+            Assert.AreEqual(4, result);
+        }
     }
 }

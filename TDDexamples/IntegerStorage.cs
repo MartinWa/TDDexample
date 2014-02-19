@@ -42,5 +42,10 @@ namespace TDDexamples
         {
             return _storage.Contains(checkedNumber);
         }
+
+        public int NumberAtIndex(int index)
+        {
+            return _storage[index];
+        }
     }
 }
