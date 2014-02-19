@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TDDexamples;
 
 namespace TDDexamplesTests
 {
@@ -6,8 +7,11 @@ namespace TDDexamplesTests
     public class IntegerStorageTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void AddInteger()
         {
+            var classUnderTest = new IntegerStorage();
+
+            classUnderTest.Add(10);
         }
     }
 }

@@ -1,6 +1,10 @@
 ﻿namespace TDDexamples
 {
-    class IntegerStorage
+    public class IntegerStorage
     {
+        public void Add(int i)
+        {
+         
+        }
     }
 }

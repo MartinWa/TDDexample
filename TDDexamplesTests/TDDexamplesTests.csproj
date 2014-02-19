@@ -53,6 +53,12 @@
     <Compile Include="IntegerStorageTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TDDexamples\TDDexamples.csproj">
+      <Project>{3FEC87BA-7650-44D1-A51D-EB99CFF1E1B9}</Project>
+      <Name>TDDexamples</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
