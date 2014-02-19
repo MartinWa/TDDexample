@@ -11,6 +11,11 @@ namespace TDDexamples
             _numberStorage = new IntegerStorage();
         }
 
+        public int CountNumbersDrawn()
+        {
+            return _numberStorage.CountStored();
+        }
+
         public void DrawAndStore()
         {
             var rnd = new Random();

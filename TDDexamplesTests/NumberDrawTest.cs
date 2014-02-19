@@ -34,7 +34,23 @@ namespace TDDexamplesTests
         }
 
         [TestMethod]
-        public void B0003_CheckNumberAtIndex()
+        public void B0003_CountNumbersDrawn()
+        {
+            // Arrange
+            var classUnderTest = new NumberDraw();
+
+            // Act
+            classUnderTest.DrawAndStore();
+            classUnderTest.DrawAndStore();
+            classUnderTest.DrawAndStore();
+            var result = classUnderTest.CountNumbersDrawn();
+
+            // Assert
+            Assert.AreEqual(3, result);
+        }
+
+        [TestMethod]
+        public void B0004_CheckNumberAtIndex()
         {
             // Arrange
             var classUnderTest = new NumberDraw();
