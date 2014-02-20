@@ -43,6 +43,12 @@
     <Compile Include="NumberDraw.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NumberDatabaseExternalCode\NumberDatabaseExternalCode.csproj">
+      <Project>{FB32E3F2-C2E6-41CA-B8C4-636B1F795527}</Project>
+      <Name>NumberDatabaseExternalCode</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
