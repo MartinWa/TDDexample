@@ -6,8 +6,16 @@ namespace TDDexamplesTests
     public class IntegerStorageTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void A0001_StoreIntegers()
         {
+            // Arrange
+            var classUnderTest = new IntegerStorage();
+
+            // Act
+            classUnderTest.Add(5);
+
+            // Assert
+            // ??
         }
     }
 }
